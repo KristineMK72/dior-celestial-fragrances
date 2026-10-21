@@ -45,7 +45,8 @@ body::before {
   z-index: 0;
 }
 header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
   padding: 1.5rem 3rem;
   display: flex;
@@ -53,8 +54,6 @@ header {
   align-items: center;
   border-bottom: 1px solid rgba(212,175,55,0.2);
   background: rgba(10,10,10,0.95);
-  position: sticky;
-  top: 0;
 }
 .logo {
   font-family: 'Cinzel', serif;
@@ -65,12 +64,13 @@ header {
 }
 .nav {
   display: flex;
-  gap: 1.5rem;
+  gap: 1.2rem;
+  flex-wrap: wrap;
 }
 .nav a {
   color: var(--cream);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   opacity: 0.85;
@@ -150,13 +150,13 @@ header {
 }
 .section-sub {
   text-align: center;
-  max-width: 620px;
+  max-width: 680px;
   margin: 0 auto 2.5rem;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 .fragrance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
@@ -174,9 +174,10 @@ header {
 }
 .card img {
   width: 100%;
-  height: 300px;
-  object-fit: cover;
-  background: #111;
+  height: 320px;
+  object-fit: contain;
+  background: #0f0f0f;
+  padding: 1rem;
 }
 .card-content {
   padding: 1.6rem;
@@ -196,8 +197,15 @@ header {
 }
 .notes {
   font-size: 0.88rem;
-  opacity: 0.85;
+  opacity: 0.9;
   margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+.history {
+  font-size: 0.82rem;
+  opacity: 0.7;
+  margin-top: 0.6rem;
+  font-style: italic;
 }
 .astro {
   display: inline-block;
@@ -207,6 +215,7 @@ header {
   border-radius: 12px;
   font-size: 0.75rem;
   letter-spacing: 1px;
+  margin-top: 0.5rem;
 }
 .zodiac-selector {
   display: flex;
@@ -252,7 +261,7 @@ footer {
   .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
   .hero-images { height: 35vh; }
   header { padding: 1rem 1.5rem; }
-  .nav { gap: 1rem; }
+  .nav { gap: 0.8rem; }
   .section { padding: 3.5rem 1.5rem; }
   .hero-content h1 { font-size: 2.8rem; }
 }
@@ -265,7 +274,8 @@ footer {
   <nav class="nav">
     <a href="#dior">Dior</a>
     <a href="#astrology">Astrology</a>
-    <a href="#more">Good Girl & Rabanne</a>
+    <a href="#more">More Houses</a>
+    <a href="#tate">Tate McRae</a>
   </nav>
 </header>
 
@@ -276,7 +286,7 @@ footer {
   </div>
   <div class="hero-content">
     <h1>Celestial<br><span>Fragrances</span></h1>
-    <p>Where the stars align with the artistry of Christian Dior and other iconic houses. Discover scents guided by the cosmos.</p>
+    <p>Where the stars align with the artistry of Christian Dior, Carolina Herrera, Rabanne, and the new TATE 01 by Tate McRae.</p>
     <a href="#dior" class="btn">Explore Fragrances</a>
   </div>
 </section>
@@ -290,32 +300,35 @@ footer {
 
 <section class="section" id="dior">
   <h2 class="section-title">Dior</h2>
-  <p class="section-sub">2026 Launches & Iconic Signatures — Expanded personality, notes & details</p>
+  <p class="section-sub">Iconic signatures reborn in 2026 — full history, notes & celestial alignments</p>
   <div class="fragrance-grid">
     <div class="card">
-      <img src="https://www.dior.com/on/demandware.static/-/Sites-master_dior/default/dw6a50e389/Y4001120/Y4001120_C400100596_E01_GHC.jpg" alt="Miss Dior" onerror="this.src='https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80'">
+      <img src="https://www.dior.com/on/demandware.static/-/Sites-master_dior/default/dw01d1ee0c/Y0000279/Y0000279_E000001744_E01_GHC.jpg" alt="Miss Dior" onerror="this.src='https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80'">
       <div class="card-content">
         <h3>Miss Dior Eau de Parfum</h3>
         <div class="personality">Expression of Femininity and Youth</div>
-        <div class="notes">Sweet & Sensual Vanilla Chypre<br>Centifolia Rose Absolute • Creamy Vanilla & Tonka • Milky Sandalwood<br><em>The couture icon with hand-crafted bow. Optimistic, graceful, free-spirited.</em></div>
+        <div class="notes"><strong>Vanilla Chypre</strong><br>Centifolia Rose Absolute • Creamy Vanilla & Almond Tonka • Milky Sandalwood</div>
+        <div class="history">Born 1947 as Christian Dior’s first fragrance for his sister Catherine. The 2026 Eau de Parfum reinvented by Francis Kurkdjian in a couture bottle with hand-tied houndstooth bow. Natalie Portman campaigns the new chapter of love and optimism.</div>
         <div class="astro">Taurus • Libra</div>
       </div>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80" alt="Sauvage Extrait">
+      <img src="https://risbelmagazine.es/wp-content/uploads/2026/09/Sauvage-Extrait-perfume-Dior-portada.jpg" alt="Sauvage Extrait" onerror="this.src='https://slimages.macysassets.com/is/image/MCY/products/8/optimized/38384058_fpx.tif?$filterlrg$&wid=600'">
       <div class="card-content">
         <h3>Sauvage Extrait</h3>
         <div class="personality">Authentic Masculinity</div>
-        <div class="notes">Rich & Instinctive Leathery Aromatic<br>Vietnamese Oud • Indonesian Patchouli • Madagascan Vetiver • Virginia Cedarwood<br><em>Francis Kurkdjian’s intense extrait. Macerated 42 days for ultimate power and longevity.</em></div>
+        <div class="notes"><strong>Leathery Aromatic Woody</strong><br>Vietnamese Oud • Indonesian Patchouli • Madagascan Vetiver • Virginia Cedarwood • Provence Lavender & Bergamot</div>
+        <div class="history">Dior’s first extrait de parfum for men (2026), created by Francis Kurkdjian. The densest Sauvage yet — macerated 42 days. Bottle features translucent deep-blue interior lacquer and CD monogram, like a drop of ink in crystal. Embodied by Johnny Depp.</div>
         <div class="astro">Scorpio • Aries</div>
       </div>
     </div>
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80" alt="J'Adore Intense">
+      <img src="https://slimages.macysassets.com/is/image/MCY/products/7/optimized/35928157_fpx.tif?$filterlrg$&wid=600" alt="J'Adore Intense" onerror="this.src='https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80'">
       <div class="card-content">
         <h3>J’Adore Intense</h3>
         <div class="personality">Absolute Femininity</div>
-        <div class="notes">Bold & Luscious Floral Gourmand<br>Velvety Rose • Juicy Jasmine with Apricot • Honeyed Ylang-Ylang • Addictive Vanilla<br><em>2026 intensification by Francis Kurkdjian. Lighter amphora bottle, higher intensity.</em></div>
+        <div class="notes"><strong>Floral Gourmand</strong><br>Velvety Damascena Rose • Grandiflorum Jasmine with Apricot • Honeyed Ylang-Ylang • Soft Sandalwood & Vanilla</div>
+        <div class="history">2026 intensification of the 1999 icon by Francis Kurkdjian. The amphora (designed by Hervé Van der Straeten) is 53% lighter for sustainability. Rihanna fronts the campaign. Honeyed nectar of flowers at peak intensity.</div>
         <div class="astro">Leo • Aquarius</div>
       </div>
     </div>
@@ -324,7 +337,8 @@ footer {
       <div class="card-content">
         <h3>Dior Homme Intense</h3>
         <div class="personality">Modern and Elegant</div>
-        <div class="notes">Warm & Sensual Ambery Woody<br>Tuscan Iris Butter • Ecuadorian Ambrette Seed Absolute • Virginia Cedar<br><em>Olfactory sharp modern suit. Starring Robert Pattinson.</em></div>
+        <div class="notes"><strong>Ambery Woody</strong><br>Tuscan Iris Butter • Ecuadorian Ambrette Seed Absolute • Virginia Cedar</div>
+        <div class="history">The olfactory interpretation of a sharp modern Dior suit. Powdery iris elevated with sensual amber and precious woods. Campaign starring Robert Pattinson. Refined, confident, and sophisticated.</div>
         <div class="astro">Virgo • Capricorn</div>
       </div>
     </div>
@@ -333,14 +347,15 @@ footer {
 
 <section class="section" id="more">
   <h2 class="section-title">Good Girl & Paco Rabanne</h2>
-  <p class="section-sub">More celestial icons from other houses</p>
+  <p class="section-sub">Iconic bottles that redefined modern fragrance</p>
   <div class="fragrance-grid">
     <div class="card">
       <img src="https://slimages.macysassets.com/is/image/MCY/products/5/optimized/14815955_fpx.tif?$filterlrg$&wid=600" alt="Good Girl" onerror="this.src='https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80'">
       <div class="card-content">
         <h3>Good Girl</h3>
         <div class="personality">Bold, Feminine, Seductive</div>
-        <div class="notes">Ambery Floral<br>Jasmine Sambac • Tuberose • Roasted Tonka Bean • Cocoa<br><em>Carolina Herrera’s iconic midnight-blue stiletto bottle. Celebrates duality of the modern woman. Launched 2016.</em></div>
+        <div class="notes"><strong>Ambery Floral</strong><br>Bitter Almond • Jasmine Sambac • Creamy Tuberose • Roasted Tonka Bean • Cocoa</div>
+        <div class="history">Launched 2016 by Carolina Herrera. The midnight-blue stiletto bottle broke every rule of perfume design and became an instant icon of feminine power and duality. Created by Louise Turner.</div>
         <div class="astro">Scorpio • Leo</div>
       </div>
     </div>
@@ -349,15 +364,33 @@ footer {
       <div class="card-content">
         <h3>Invictus / 1 Million</h3>
         <div class="personality">Victorious, Confident, Iconic</div>
-        <div class="notes">Fresh Marine (Invictus) or Sweet Amber (1 Million)<br>Grapefruit • Marine • Guaiac Wood / Gold-bar icon<br><em>Paco Rabanne (Rabanne) — trophy and gold-bar bottles symbolize success and luxury.</em></div>
+        <div class="notes"><strong>Fresh Marine or Sweet Amber</strong><br>Invictus: Grapefruit • Marine Accord • Guaiac Wood • Patchouli<br>1 Million: Gold-bar icon of luxury</div>
+        <div class="history">Invictus (2013) is the silver trophy bottle born from sporting victory. 1 Million (2008) made the gold ingot a global symbol of masculine luxury. Both define Rabanne’s performance and excess.</div>
         <div class="astro">Aries • Leo</div>
       </div>
     </div>
   </div>
 </section>
 
+<section class="section" id="tate">
+  <h2 class="section-title">Tate McRae — TATE 01</h2>
+  <p class="section-sub">The pop star’s debut fragrance: a second-skin scent</p>
+  <div class="fragrance-grid">
+    <div class="card">
+      <img src="https://www.beautypackaging.com/wp-content/uploads/sites/8/2026/10/news_tate.jpg" alt="TATE 01 by Tate McRae" onerror="this.src='https://wwd.com/wp-content/uploads/2026/10/MixCollage-30-Sep-2026-09-23-AM-7946.jpg?w=800'">
+      <div class="card-content">
+        <h3>TATE 01</h3>
+        <div class="personality">Effortless, Subtly Edgy, Second Skin</div>
+        <div class="notes"><strong>Woody Floral</strong><br>Sparkling Bergamot • Clary Sage • White Florals (Orange Flower, Hedione) • Moss • Creamy Tonka • Sandalwood • Iso E Super</div>
+        <div class="history">Launched October 2026 with Scent Beauty. Composed by Givaudan perfumers Adriana Medina and Antoine Maisondieu. Designed to melt into skin and enhance the wearer’s own chemistry. Available on tatebytm.com and Ulta.</div>
+        <div class="astro">Gemini • Libra</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  CELESTIAL FRAGRANCES • DIOR • GOOD GIRL • PACO RABANNE<br>
+  CELESTIAL FRAGRANCES • DIOR • GOOD GIRL • RABANNE • TATE MCRAE<br>
   More houses coming soon.
 </footer>
 
@@ -365,11 +398,11 @@ footer {
 const zodiacs = [
   { sign: 'Aries', fragrance: 'Sauvage Extrait', reason: 'Your bold, fearless energy mirrors the instinctive and mysterious power of Sauvage Extrait.' },
   { sign: 'Taurus', fragrance: 'Miss Dior', reason: 'Sensual, grounded, and luxurious — Miss Dior’s creamy rose and vanilla embody your refined pleasure-seeking nature.' },
-  { sign: 'Gemini', fragrance: 'Dior Homme Intense', reason: 'Modern, witty, and adaptable — the cool elegance of Homme Intense matches your dual nature.' },
+  { sign: 'Gemini', fragrance: 'TATE 01', reason: 'Curious and adaptable — TATE 01’s second-skin Iso E Super evolves differently on every wearer, just like you.' },
   { sign: 'Cancer', fragrance: 'Miss Dior', reason: 'Nurturing and romantic, Miss Dior’s youthful femininity wraps you in soft, protective sweetness.' },
   { sign: 'Leo', fragrance: "J'Adore Intense", reason: 'Iconic, radiant, and captivating — J’Adore Intense is made for your dramatic, empowered presence.' },
   { sign: 'Virgo', fragrance: 'Dior Homme Intense', reason: 'Precise, elegant, and refined — the clean iris and woody notes of Homme Intense reflect your discerning taste.' },
-  { sign: 'Libra', fragrance: 'Miss Dior', reason: 'Graceful, harmonious, and beautiful — Miss Dior’s free-spirited femininity is the perfect balance for you.' },
+  { sign: 'Libra', fragrance: 'TATE 01', reason: 'Harmonious and balanced — TATE 01’s effortless second-skin quality feels perfectly tailored to you.' },
   { sign: 'Scorpio', fragrance: 'Sauvage Extrait', reason: 'Mysterious, intense, and magnetic — Sauvage Extrait’s leathery oud speaks to your deep, transformative power.' },
   { sign: 'Sagittarius', fragrance: "J'Adore Intense", reason: 'Visionary and adventurous — J’Adore Intense’s bold floral gourmand fuels your optimistic spirit.' },
   { sign: 'Capricorn', fragrance: 'Dior Homme Intense', reason: 'Ambitious, structured, and sophisticated — Homme Intense’s modern elegance matches your driven essence.' },
