@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dior Celestial Fragrances</title>
+<title>Celestial Fragrances</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -47,57 +47,63 @@ body::before {
 header {
   position: relative;
   z-index: 10;
-  padding: 2rem 4rem;
+  padding: 1.5rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(212,175,55,0.2);
+  background: rgba(10,10,10,0.95);
+  position: sticky;
+  top: 0;
 }
 .logo {
   font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  letter-spacing: 8px;
+  font-size: 1.8rem;
+  letter-spacing: 6px;
   font-weight: 700;
   color: var(--gold);
+}
+.nav {
+  display: flex;
+  gap: 1.5rem;
 }
 .nav a {
   color: var(--cream);
   text-decoration: none;
-  margin-left: 2rem;
-  font-size: 0.85rem;
-  letter-spacing: 2px;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  opacity: 0.8;
-  transition: opacity 0.3s;
+  opacity: 0.85;
+  transition: all 0.3s;
 }
 .nav a:hover { opacity: 1; color: var(--gold); }
 .hero {
   position: relative;
   z-index: 5;
-  min-height: 90vh;
+  min-height: 85vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  padding: 4rem;
-  gap: 4rem;
+  padding: 4rem 3rem;
+  gap: 3rem;
 }
 .hero-images {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
-  height: 70vh;
+  height: 65vh;
 }
 .hero-images img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 4px;
-  filter: grayscale(20%) contrast(1.1);
+  filter: grayscale(15%) contrast(1.05);
   border: 1px solid rgba(212,175,55,0.3);
 }
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 4.5rem;
+  font-size: 4rem;
   line-height: 0.9;
   margin-bottom: 1.5rem;
   color: var(--gold);
@@ -107,21 +113,21 @@ header {
   font-weight: 400;
   color: var(--cream);
   display: block;
-  font-size: 0.6em;
+  font-size: 0.55em;
 }
 .hero-content p {
-  font-size: 1.1rem;
-  max-width: 480px;
+  font-size: 1.05rem;
+  max-width: 460px;
   opacity: 0.85;
   margin-bottom: 2rem;
 }
 .btn {
   display: inline-block;
-  padding: 0.9rem 2.2rem;
+  padding: 0.9rem 2rem;
   border: 1px solid var(--gold);
   color: var(--gold);
   text-decoration: none;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
   font-size: 0.8rem;
   text-transform: uppercase;
   transition: all 0.3s;
@@ -133,50 +139,25 @@ header {
 .section {
   position: relative;
   z-index: 5;
-  padding: 6rem 4rem;
+  padding: 5rem 3rem;
 }
 .section-title {
   font-family: 'Playfair Display', serif;
-  font-size: 3rem;
+  font-size: 2.8rem;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: var(--gold);
 }
 .section-sub {
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto 3rem;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
   opacity: 0.7;
-  font-size: 1rem;
-}
-.zodiac-selector {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
-  margin-bottom: 3rem;
-}
-.zodiac-btn {
-  background: transparent;
-  border: 1px solid rgba(212,175,55,0.4);
-  color: var(--cream);
-  padding: 0.6rem 1rem;
-  font-family: 'Inter', sans-serif;
-  font-size: 0.8rem;
-  letter-spacing: 1px;
-  cursor: pointer;
-  transition: all 0.3s;
-  border-radius: 20px;
-}
-.zodiac-btn:hover, .zodiac-btn.active {
-  background: var(--gold);
-  color: var(--dark);
-  border-color: var(--gold);
 }
 .fragrance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -185,101 +166,106 @@ header {
   border: 1px solid rgba(212,175,55,0.15);
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.4s, border-color 0.3s;
-  position: relative;
+  transition: transform 0.3s, border-color 0.3s;
 }
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   border-color: var(--gold);
 }
 .card img {
   width: 100%;
-  height: 320px;
+  height: 300px;
   object-fit: cover;
+  background: #111;
 }
 .card-content {
-  padding: 1.8rem;
+  padding: 1.6rem;
 }
 .card h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
   color: var(--gold);
 }
 .personality {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--soft-gold);
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 .notes {
-  font-size: 0.9rem;
-  opacity: 0.8;
-  margin-bottom: 1rem;
+  font-size: 0.88rem;
+  opacity: 0.85;
+  margin-bottom: 0.8rem;
 }
 .astro {
   display: inline-block;
   background: rgba(212,175,55,0.15);
   color: var(--gold);
-  padding: 0.3rem 0.8rem;
+  padding: 0.25rem 0.7rem;
   border-radius: 12px;
   font-size: 0.75rem;
   letter-spacing: 1px;
-  margin-top: 0.5rem;
+}
+.zodiac-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+  margin-bottom: 2rem;
+}
+.zodiac-btn {
+  background: transparent;
+  border: 1px solid rgba(212,175,55,0.4);
+  color: var(--cream);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+.zodiac-btn:hover, .zodiac-btn.active {
+  background: var(--gold);
+  color: var(--dark);
+  border-color: var(--gold);
 }
 .recommendation {
   text-align: center;
-  margin-top: 2rem;
-  padding: 2rem;
+  margin-top: 1.5rem;
+  padding: 1.8rem;
   background: rgba(212,175,55,0.08);
   border-radius: 8px;
   border: 1px solid rgba(212,175,55,0.2);
   display: none;
 }
 .recommendation.show { display: block; }
-.sets {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.set-item {
-  background: rgba(255,255,255,0.02);
-  padding: 1.5rem;
-  border: 1px solid rgba(212,175,55,0.1);
-  text-align: center;
-  border-radius: 6px;
-}
-.set-item h4 { color: var(--gold); margin-bottom: 0.5rem; font-family: 'Playfair Display', serif; }
-.set-item .price { font-size: 1.2rem; color: var(--cream); margin-top: 0.5rem; }
 footer {
   text-align: center;
-  padding: 3rem;
+  padding: 2.5rem;
   border-top: 1px solid rgba(212,175,55,0.15);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   opacity: 0.6;
-  letter-spacing: 1px;
 }
-@media (max-width: 900px) {
-  .hero { grid-template-columns: 1fr; padding: 2rem; }
-  .hero-images { height: 40vh; }
-  header { padding: 1.5rem; }
-  .nav { display: none; }
-  .section { padding: 4rem 1.5rem; }
-  .hero-content h1 { font-size: 3rem; }
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+  .hero-images { height: 35vh; }
+  header { padding: 1rem 1.5rem; }
+  .nav { gap: 1rem; }
+  .section { padding: 3.5rem 1.5rem; }
+  .hero-content h1 { font-size: 2.8rem; }
 }
 </style>
 </head>
 <body>
 <div class="stars"></div>
 <header>
-  <div class="logo">DIOR</div>
+  <div class="logo">CELESTIAL</div>
   <nav class="nav">
-    <a href="#fragrances">Fragrances</a>
+    <a href="#dior">Dior</a>
     <a href="#astrology">Astrology</a>
-    <a href="#sets">Sets</a>
+    <a href="#more">Good Girl & Rabanne</a>
   </nav>
 </header>
 
@@ -290,28 +276,28 @@ footer {
   </div>
   <div class="hero-content">
     <h1>Celestial<br><span>Fragrances</span></h1>
-    <p>Where the stars align with the artistry of Christian Dior. Discover scents born at 30 Avenue Montaigne, now guided by the cosmos.</p>
-    <a href="#astrology" class="btn">Find Your Sign</a>
+    <p>Where the stars align with the artistry of Christian Dior and other iconic houses. Discover scents guided by the cosmos.</p>
+    <a href="#dior" class="btn">Explore Fragrances</a>
   </div>
 </section>
 
 <section class="section" id="astrology">
   <h2 class="section-title">Your Cosmic Scent</h2>
-  <p class="section-sub">Select your zodiac sign to reveal the Dior fragrance that resonates with your celestial energy.</p>
+  <p class="section-sub">Select your zodiac sign to reveal the fragrance that resonates with your celestial energy.</p>
   <div class="zodiac-selector" id="zodiacSelector"></div>
   <div class="recommendation" id="recommendation"></div>
 </section>
 
-<section class="section" id="fragrances">
-  <h2 class="section-title">The Collection</h2>
-  <p class="section-sub">2026 Launches & Iconic Signatures — Personality, Notes & Astrological Alignments</p>
+<section class="section" id="dior">
+  <h2 class="section-title">Dior</h2>
+  <p class="section-sub">2026 Launches & Iconic Signatures — Expanded personality, notes & details</p>
   <div class="fragrance-grid">
     <div class="card">
-      <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80" alt="Miss Dior">
+      <img src="https://www.dior.com/on/demandware.static/-/Sites-master_dior/default/dw6a50e389/Y4001120/Y4001120_C400100596_E01_GHC.jpg" alt="Miss Dior" onerror="this.src='https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=600&q=80'">
       <div class="card-content">
-        <h3>Miss Dior</h3>
+        <h3>Miss Dior Eau de Parfum</h3>
         <div class="personality">Expression of Femininity and Youth</div>
-        <div class="notes">Sweet & Sensual • Vanilla Chypre<br>Sweet Rose • Creamy Vanilla & Tonka • Milky Sandalwood</div>
+        <div class="notes">Sweet & Sensual Vanilla Chypre<br>Centifolia Rose Absolute • Creamy Vanilla & Tonka • Milky Sandalwood<br><em>The couture icon with hand-crafted bow. Optimistic, graceful, free-spirited.</em></div>
         <div class="astro">Taurus • Libra</div>
       </div>
     </div>
@@ -320,16 +306,16 @@ footer {
       <div class="card-content">
         <h3>Sauvage Extrait</h3>
         <div class="personality">Authentic Masculinity</div>
-        <div class="notes">Rich & Instinctive • Leathery Aromatic<br>Leathery Vietnamese Oud • Creamy Virginia Cedarwood</div>
+        <div class="notes">Rich & Instinctive Leathery Aromatic<br>Vietnamese Oud • Indonesian Patchouli • Madagascan Vetiver • Virginia Cedarwood<br><em>Francis Kurkdjian’s intense extrait. Macerated 42 days for ultimate power and longevity.</em></div>
         <div class="astro">Scorpio • Aries</div>
       </div>
     </div>
     <div class="card">
       <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80" alt="J'Adore Intense">
       <div class="card-content">
-        <h3>J'Adore Intense</h3>
+        <h3>J’Adore Intense</h3>
         <div class="personality">Absolute Femininity</div>
-        <div class="notes">Bold & Luscious • Floral Gourmand<br>Velvety Rose • Juicy Jasmine • Honeyed Ylang-Ylang • Addictive Vanilla</div>
+        <div class="notes">Bold & Luscious Floral Gourmand<br>Velvety Rose • Juicy Jasmine with Apricot • Honeyed Ylang-Ylang • Addictive Vanilla<br><em>2026 intensification by Francis Kurkdjian. Lighter amphora bottle, higher intensity.</em></div>
         <div class="astro">Leo • Aquarius</div>
       </div>
     </div>
@@ -338,48 +324,41 @@ footer {
       <div class="card-content">
         <h3>Dior Homme Intense</h3>
         <div class="personality">Modern and Elegant</div>
-        <div class="notes">Warm & Sensual • Ambery Woody<br>Tuscan Iris Butter • Ecuadorian Ambrette Seed • Virginia Cedar</div>
+        <div class="notes">Warm & Sensual Ambery Woody<br>Tuscan Iris Butter • Ecuadorian Ambrette Seed Absolute • Virginia Cedar<br><em>Olfactory sharp modern suit. Starring Robert Pattinson.</em></div>
         <div class="astro">Virgo • Capricorn</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="sets">
-  <h2 class="section-title">Fragrance Sets</h2>
-  <p class="section-sub">Curated pairings for the complete Dior experience</p>
-  <div class="sets">
-    <div class="set-item">
-      <h4>Sauvage EDT 100mL + TS 10mL</h4>
-      <p>OMNI</p>
-      <div class="price">US $160</div>
+<section class="section" id="more">
+  <h2 class="section-title">Good Girl & Paco Rabanne</h2>
+  <p class="section-sub">More celestial icons from other houses</p>
+  <div class="fragrance-grid">
+    <div class="card">
+      <img src="https://slimages.macysassets.com/is/image/MCY/products/5/optimized/14815955_fpx.tif?$filterlrg$&wid=600" alt="Good Girl" onerror="this.src='https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80'">
+      <div class="card-content">
+        <h3>Good Girl</h3>
+        <div class="personality">Bold, Feminine, Seductive</div>
+        <div class="notes">Ambery Floral<br>Jasmine Sambac • Tuberose • Roasted Tonka Bean • Cocoa<br><em>Carolina Herrera’s iconic midnight-blue stiletto bottle. Celebrates duality of the modern woman. Launched 2016.</em></div>
+        <div class="astro">Scorpio • Leo</div>
+      </div>
     </div>
-    <div class="set-item">
-      <h4>Sauvage EDP 100mL + TS 10mL</h4>
-      <p>OMNI</p>
-      <div class="price">US $195</div>
-    </div>
-    <div class="set-item">
-      <h4>Miss Dior EDP 100mL + TS 10mL</h4>
-      <p>OMNI</p>
-      <div class="price">US $199</div>
-    </div>
-    <div class="set-item">
-      <h4>Miss Dior BB 100mL + TS 10mL</h4>
-      <p>OMNI</p>
-      <div class="price">US $169</div>
-    </div>
-    <div class="set-item">
-      <h4>DA Rosy 50mL + Lip Glow Oil</h4>
-      <p>OMNI</p>
-      <div class="price">US $166</div>
+    <div class="card">
+      <img src="https://medias.rabanne.com/medias/sys_master/images/hd3/h7b/10972041543710/10972041478174/10972041478174.jpg" alt="Invictus" onerror="this.src='https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=600&q=80'">
+      <div class="card-content">
+        <h3>Invictus / 1 Million</h3>
+        <div class="personality">Victorious, Confident, Iconic</div>
+        <div class="notes">Fresh Marine (Invictus) or Sweet Amber (1 Million)<br>Grapefruit • Marine • Guaiac Wood / Gold-bar icon<br><em>Paco Rabanne (Rabanne) — trophy and gold-bar bottles symbolize success and luxury.</em></div>
+        <div class="astro">Aries • Leo</div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  DIOR CELESTIAL • 30 AVENUE MONTAIGNE • PARIS<br>
-  More houses & fragrances coming soon.
+  CELESTIAL FRAGRANCES • DIOR • GOOD GIRL • PACO RABANNE<br>
+  More houses coming soon.
 </footer>
 
 <script>
@@ -409,8 +388,8 @@ zodiacs.forEach(z => {
     document.querySelectorAll('.zodiac-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     rec.innerHTML = `
-      <h3 style="font-family:'Playfair Display',serif; color:var(--gold); font-size:2rem; margin-bottom:1rem;">${z.sign}</h3>
-      <p style="font-size:1.2rem; margin-bottom:0.5rem;">Your Celestial Match: <strong style="color:var(--gold)">${z.fragrance}</strong></p>
+      <h3 style="font-family:'Playfair Display',serif; color:var(--gold); font-size:1.8rem; margin-bottom:0.8rem;">${z.sign}</h3>
+      <p style="font-size:1.1rem; margin-bottom:0.4rem;">Your Celestial Match: <strong style="color:var(--gold)">${z.fragrance}</strong></p>
       <p style="opacity:0.85;">${z.reason}</p>
     `;
     rec.classList.add('show');
