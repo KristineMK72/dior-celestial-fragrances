@@ -9,13 +9,14 @@
 <style>
 :root {
   --gold: #d4af37;
+  --ulta: #ff6b00;
   --dark: #0a0a0a;
   --cream: #f8f5f0;
   --soft-gold: #c9a96e;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  background: var(--dark);
+  background: #050505;
   color: var(--cream);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
@@ -25,8 +26,10 @@ body::before {
   content: '';
   position: fixed;
   inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(212,175,55,0.08) 0%, transparent 40%),
-              radial-gradient(circle at 80% 70%, rgba(212,175,55,0.06) 0%, transparent 35%);
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(255,107,0,0.18) 0%, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(255,107,0,0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(212,175,55,0.06) 0%, transparent 50%);
   pointer-events: none;
   z-index: 0;
 }
@@ -34,13 +37,13 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(1px 1px at 10% 20%, white, transparent),
+    radial-gradient(1.5px 1.5px at 10% 20%, #ff6b00, transparent),
     radial-gradient(1px 1px at 30% 60%, white, transparent),
     radial-gradient(1.5px 1.5px at 70% 30%, #d4af37, transparent),
-    radial-gradient(1px 1px at 90% 80%, white, transparent),
+    radial-gradient(1px 1px at 90% 80%, #ff6b00, transparent),
     radial-gradient(1px 1px at 50% 10%, white, transparent);
   background-size: 100% 100%;
-  opacity: 0.4;
+  opacity: 0.5;
   pointer-events: none;
   z-index: 0;
 }
@@ -52,15 +55,18 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid rgba(212,175,55,0.2);
-  background: rgba(10,10,10,0.95);
+  border-bottom: 1px solid rgba(255,107,0,0.3);
+  background: rgba(10,10,10,0.92);
+  backdrop-filter: blur(8px);
 }
 .logo {
   font-family: 'Cinzel', serif;
   font-size: 1.8rem;
   letter-spacing: 6px;
   font-weight: 700;
-  color: var(--gold);
+  background: linear-gradient(90deg, #ff6b00, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .nav {
   display: flex;
@@ -76,7 +82,7 @@ header {
   opacity: 0.85;
   transition: all 0.3s;
 }
-.nav a:hover { opacity: 1; color: var(--gold); }
+.nav a:hover { opacity: 1; color: var(--ulta); }
 .hero {
   position: relative;
   z-index: 5;
@@ -97,16 +103,18 @@ header {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 4px;
-  filter: grayscale(15%) contrast(1.05);
-  border: 1px solid rgba(212,175,55,0.3);
+  border-radius: 8px;
+  filter: grayscale(10%) contrast(1.05);
+  border: 1px solid rgba(255,107,0,0.4);
 }
 .hero-content h1 {
   font-family: 'Playfair Display', serif;
   font-size: 4rem;
   line-height: 0.9;
   margin-bottom: 1.5rem;
-  color: var(--gold);
+  background: linear-gradient(90deg, #ff6b00, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-content h1 span {
   font-style: italic;
@@ -114,6 +122,8 @@ header {
   color: var(--cream);
   display: block;
   font-size: 0.55em;
+  background: none;
+  -webkit-text-fill-color: var(--cream);
 }
 .hero-content p {
   font-size: 1.05rem;
@@ -124,8 +134,8 @@ header {
 .btn {
   display: inline-block;
   padding: 0.9rem 2rem;
-  border: 1px solid var(--gold);
-  color: var(--gold);
+  border: 1px solid var(--ulta);
+  color: var(--ulta);
   text-decoration: none;
   letter-spacing: 2px;
   font-size: 0.8rem;
@@ -133,8 +143,8 @@ header {
   transition: all 0.3s;
 }
 .btn:hover {
-  background: var(--gold);
-  color: var(--dark);
+  background: var(--ulta);
+  color: #000;
 }
 .section {
   position: relative;
@@ -146,7 +156,9 @@ header {
   font-size: 2.8rem;
   text-align: center;
   margin-bottom: 0.8rem;
-  color: var(--gold);
+  background: linear-gradient(90deg, #ff6b00, #d4af37);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .section-sub {
   text-align: center;
@@ -156,25 +168,26 @@ header {
 }
 .fragrance-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
   max-width: 1400px;
   margin: 0 auto;
 }
 .card {
   background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(212,175,55,0.15);
-  border-radius: 8px;
+  border: 1px solid rgba(255,107,0,0.2);
+  border-radius: 12px;
   overflow: hidden;
-  transition: transform 0.3s, border-color 0.3s;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
 }
 .card:hover {
-  transform: translateY(-6px);
-  border-color: var(--gold);
+  transform: translateY(-8px);
+  border-color: var(--ulta);
+  box-shadow: 0 12px 40px rgba(255,107,0,0.15);
 }
 .card img {
   width: 100%;
-  height: 340px;
+  height: 320px;
   object-fit: contain;
   background: #111;
   padding: 1rem;
@@ -186,7 +199,7 @@ header {
   font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin-bottom: 0.4rem;
-  color: var(--gold);
+  color: var(--ulta);
 }
 .personality {
   font-size: 0.8rem;
@@ -203,9 +216,9 @@ header {
 }
 .history {
   font-size: 0.82rem;
-  opacity: 0.78;
+  opacity: 0.82;
   margin-top: 0.6rem;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 .people {
   font-size: 0.8rem;
@@ -215,8 +228,8 @@ header {
 }
 .astro {
   display: inline-block;
-  background: rgba(212,175,55,0.15);
-  color: var(--gold);
+  background: rgba(255,107,0,0.15);
+  color: var(--ulta);
   padding: 0.25rem 0.7rem;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -232,7 +245,7 @@ header {
 }
 .zodiac-btn {
   background: transparent;
-  border: 1px solid rgba(212,175,55,0.4);
+  border: 1px solid rgba(255,107,0,0.4);
   color: var(--cream);
   padding: 0.5rem 0.9rem;
   font-size: 0.78rem;
@@ -242,24 +255,24 @@ header {
   transition: all 0.3s;
 }
 .zodiac-btn:hover, .zodiac-btn.active {
-  background: var(--gold);
-  color: var(--dark);
-  border-color: var(--gold);
+  background: var(--ulta);
+  color: #000;
+  border-color: var(--ulta);
 }
 .recommendation {
   text-align: center;
   margin-top: 1.5rem;
   padding: 1.8rem;
-  background: rgba(212,175,55,0.08);
-  border-radius: 8px;
-  border: 1px solid rgba(212,175,55,0.2);
+  background: rgba(255,107,0,0.08);
+  border-radius: 12px;
+  border: 1px solid rgba(255,107,0,0.3);
   display: none;
 }
 .recommendation.show { display: block; }
 footer {
   text-align: center;
   padding: 2.5rem;
-  border-top: 1px solid rgba(212,175,55,0.15);
+  border-top: 1px solid rgba(255,107,0,0.2);
   font-size: 0.78rem;
   opacity: 0.6;
 }
@@ -293,7 +306,7 @@ footer {
   </div>
   <div class="hero-content">
     <h1>Celestial<br><span>Fragrances</span></h1>
-    <p>Where the stars align with the artistry of Christian Dior, the faces who embody them, and the icons available at Ulta.</p>
+    <p>Where the stars align with the artistry of Christian Dior, the faces who embody them, and the icons available at Ulta. Stories, origins, and the people behind the scents.</p>
     <a href="#dior" class="btn">Explore Fragrances</a>
   </div>
 </section>
@@ -307,7 +320,7 @@ footer {
 
 <section class="section" id="dior">
   <h2 class="section-title">Dior</h2>
-  <p class="section-sub">Iconic signatures reborn in 2026 — verified images, deep history, people & notes</p>
+  <p class="section-sub">Iconic signatures reborn in 2026 — deep history, people & origins</p>
   <div class="fragrance-grid">
     <div class="card">
       <img src="https://imgix.bustle.com/uploads/image/2026/8/5/70ac5f17/f249_md_rewamp_edp_26_m01zd_main_crop_sw_f39.jpg?w=800&h=1000&fit=crop&fm=jpg" alt="Natalie Portman Miss Dior 2026" onerror="this.src='https://theimpression.com/wp-content/uploads/2026/08/Dior-Spring-2026-News-The-impression-002.jpg'">
@@ -316,7 +329,7 @@ footer {
         <div class="personality">Expression of Femininity and Youth</div>
         <div class="notes"><strong>Vanilla Chypre</strong><br>Centifolia Rose Absolute • Creamy Vanilla & Almond Tonka • Milky Sandalwood</div>
         <div class="people">Face: Natalie Portman (since 2011) • Perfumer: Francis Kurkdjian • Founder: Christian Dior</div>
-        <div class="history">Created in 1947 as Christian Dior’s first fragrance, dedicated to his sister Catherine. The 2026 Eau de Parfum is a modern couture reinterpretation by Francis Kurkdjian. The bottle features a hand-crafted houndstooth bow. Natalie Portman has embodied Miss Dior for over 15 years; the 2026 campaign (directed by Manu Cossu, photographed by Lachlan Bailey) shows her in Paris gathering flowers to Chappell Roan’s “Good Luck Babe.”</div>
+        <div class="history"><strong>Origins & Development:</strong> Created in 1947 in Paris as Christian Dior’s first fragrance, dedicated to his beloved sister Catherine Dior, a French Resistance fighter. Developed at the house’s laboratories under the original artistic direction of the couture house at 30 Avenue Montaigne. The 2026 Eau de Parfum is a modern couture reinterpretation by Francis Kurkdjian, elevating the original rose chypre with creamy vanilla and milky sandalwood. The bottle features a hand-crafted houndstooth bow inspired by Dior’s New Look.<br><br><strong>The People:</strong> Natalie Portman has been the global face since 2011. The 2026 campaign (directed by Manu Cossu, photographed by Lachlan Bailey) shows her gathering flowers in Paris to Chappell Roan’s “Good Luck Babe.”</div>
         <div class="astro">Taurus • Libra</div>
       </div>
     </div>
@@ -327,7 +340,7 @@ footer {
         <div class="personality">Authentic Masculinity</div>
         <div class="notes"><strong>Leathery Aromatic Woody</strong><br>Vietnamese Oud • Indonesian Patchouli • Madagascan Vetiver • Virginia Cedar • Provence Lavender</div>
         <div class="people">Face: Johnny Depp (since 2015) • Perfumer: Francis Kurkdjian • Photographer: Jean-Baptiste Mondino</div>
-        <div class="history">Dior’s first extrait de parfum for men (2026). Macerated 42 days. Bottle with deep-blue interior lacquer and CD monogram. Johnny Depp returns as ambassador in a contemplative campaign that mirrors the fragrance’s intensity.</div>
+        <div class="history"><strong>Origins & Development:</strong> Dior’s first extrait de parfum for men, launched in 2026. Developed in Paris under Francis Kurkdjian’s direction and macerated for 42 days for exceptional concentration. The bottle features deep-blue interior lacquer and the CD monogram, nodding to the original Sauvage (2015) which was created to capture the spirit of open landscapes.<br><br><strong>The People:</strong> Johnny Depp has been the face since 2015. The 2026 campaign, photographed by Jean-Baptiste Mondino, shows him in a contemplative, intense mode that mirrors the fragrance’s power.</div>
         <div class="astro">Scorpio • Aries</div>
       </div>
     </div>
@@ -338,7 +351,7 @@ footer {
         <div class="personality">Absolute Femininity</div>
         <div class="notes"><strong>Floral Gourmand</strong><br>Honeyed Ylang-Ylang • Damascena Rose • Jasmine with Apricot • Sandalwood & Vanilla</div>
         <div class="people">Face / Muse: Rihanna (since 2024) • Perfumer: Francis Kurkdjian • Original: Calice Becker (1999)</div>
-        <div class="history">2026 intensification of the 1999 icon. Francis Kurkdjian composed it with Rihanna specifically in mind — the first time he has used a muse. The amphora is 53% lighter. Rihanna succeeded Charlize Theron; campaign shot at Versailles by Steven Klein. Honeyed, voluptuous, and solar.</div>
+        <div class="history"><strong>Origins & Development:</strong> The original J’Adore was created in 1999 by Calice Becker and launched as Dior’s modern floral icon. The 2026 Intense is a new composition by Francis Kurkdjian, developed specifically with Rihanna as muse — the first time he has composed with a face in mind. The amphora bottle is 53% lighter. Developed in Paris, the scent intensifies the original with honeyed ylang and apricot-touched jasmine.<br><br><strong>The People:</strong> Rihanna succeeded Charlize Theron as the face in 2024. The campaign was shot at the Palace of Versailles by Steven Klein.</div>
         <div class="astro">Leo • Aquarius</div>
       </div>
     </div>
@@ -349,7 +362,7 @@ footer {
         <div class="personality">Modern and Elegant</div>
         <div class="notes"><strong>Ambery Woody</strong><br>Tuscan Iris Butter • Ecuadorian Ambrette • Virginia Cedar</div>
         <div class="people">Face: Robert Pattinson (multiple campaigns) • Photographer: Peter Lindbergh (earlier), recent films by The Blaze</div>
-        <div class="history">The olfactory interpretation of a sharp modern Dior suit. Powdery iris elevated with sensual amber and precious woods. Robert Pattinson has fronted Dior Homme campaigns since the mid-2010s, including Intense City. Refined, confident, sophisticated.</div>
+        <div class="history"><strong>Origins & Development:</strong> The olfactory interpretation of a sharp modern Dior suit. Originally developed in Paris as part of the Dior Homme line (launched 2005 by Hedi Slimane). The Intense version elevates the powdery iris with sensual amber and precious woods. Campaigns have been shot in New York and Paris.<br><br><strong>The People:</strong> Robert Pattinson has fronted Dior Homme campaigns since the mid-2010s, including the 2016 Intense City campaign photographed by Peter Lindbergh in New York. Recent films directed by The Blaze continue the urban, magnetic aesthetic.</div>
         <div class="astro">Virgo • Capricorn</div>
       </div>
     </div>
@@ -367,7 +380,7 @@ footer {
         <div class="personality">Bold, Feminine, Seductive</div>
         <div class="notes"><strong>Ambery Floral</strong><br>Bitter Almond • Jasmine Sambac • Tuberose • Roasted Tonka • Cocoa</div>
         <div class="people">Founder: Carolina Herrera • Perfumer: Louise Turner • Face: Karlie Kloss (since 2016, 10-year anniversary in 2026)</div>
-        <div class="history">Launched 2016. The midnight-blue stiletto bottle (gold heel) broke every traditional design rule and became a global symbol of feminine power and duality. Karlie Kloss has been the face for a decade and recently celebrated the milestone with V Magazine. Widely available at Ulta.</div>
+        <div class="history"><strong>Origins & Development:</strong> Launched in 2016 by the House of Carolina Herrera in New York. Fragrance Creative Director Carolina A. Herrera worked with perfumers Louise Turner and Quentin Bisch to create a scent built on contrast: bright jasmine and tuberose against roasted tonka and cocoa. The midnight-blue stiletto bottle (gold heel) was a radical design break and instantly became a global symbol of feminine power and duality. Developed as a celebration of the multifaceted modern woman.<br><br><strong>The People:</strong> Karlie Kloss has been the face since day one. In 2026 she celebrated a decade with the brand, including a V Magazine cover story. The house has also supported her Kode With Klossy coding nonprofit.</div>
         <div class="astro">Scorpio • Leo</div>
       </div>
     </div>
@@ -378,7 +391,7 @@ footer {
         <div class="personality">Victorious, Confident, Iconic</div>
         <div class="notes"><strong>Fresh Marine / Sweet Amber</strong><br>Invictus: Grapefruit, Marine, Guaiac Wood • 1 Million: Gold-bar luxury</div>
         <div class="people">Founder: Paco Rabanne • Invictus bottle by Cédric Ragot</div>
-        <div class="history">Invictus (2013) is the silver trophy bottle of sporting victory. 1 Million (2008) made the gold ingot a worldwide symbol of masculine luxury. Both define Rabanne and are stocked at Ulta.</div>
+        <div class="history"><strong>Origins & Development:</strong> 1 Million (2008) was created in Paris by the House of Paco Rabanne; the gold-ingot bottle became a worldwide symbol of masculine luxury. Invictus (2013) followed with a silver trophy bottle designed by Cédric Ragot, inspired by sporting victory and developed as a fresh marine-woody scent. Both were developed under the creative direction of the Rabanne house and remain core Ulta bestsellers.</div>
         <div class="astro">Aries • Leo</div>
       </div>
     </div>
@@ -396,7 +409,7 @@ footer {
         <div class="personality">Explosive Floral, Confident, Addictive</div>
         <div class="notes"><strong>Floral Oriental</strong><br>Tea, Bergamot • Jasmine, Rose, Orchid • Patchouli, Vanilla</div>
         <div class="people">Designers: Viktor Horsting & Rolf Snoeren • Perfumer: Olivier Polge / Carlos Benaim / Dominique Ropion</div>
-        <div class="history">Launched 2005. The grenade-shaped bottle became an instant icon. One of Ulta’s all-time best-selling florals. A powerful, sweet floral bomb.</div>
+        <div class="history"><strong>Origins & Development:</strong> Launched in 2005 by the Dutch design duo Viktor Horsting and Rolf Snoeren. The scent was developed as an “explosion of 1,000 flowers.” The iconic diamond-grenade bottle was designed by Fabien Baron. Created in collaboration with master perfumers Olivier Polge, Carlos Benaim, and Dominique Ropion. One of Ulta’s all-time best-selling florals.</div>
         <div class="astro">Leo • Scorpio</div>
       </div>
     </div>
@@ -407,7 +420,7 @@ footer {
         <div class="personality">Addictive, Sensual, Nighttime</div>
         <div class="notes"><strong>Oriental Vanilla</strong><br>Pink Pepper, Orange Blossom • Coffee, Jasmine • Vanilla, Patchouli</div>
         <div class="people">House: Yves Saint Laurent • Perfumer: Olivier Cresp / Honorine Blanc / Nathalie Lorson</div>
-        <div class="history">Launched 2014. The black bottle with gold accents became a nightlife staple. Coffee and vanilla create an addictive trail. Top Ulta seller.</div>
+        <div class="history"><strong>Origins & Development:</strong> Launched in 2014 by Yves Saint Laurent Beauty as a modern, edgy reinterpretation of the original Opium (1977). Developed as the first major feminine fragrance to feature a black coffee accord. The black glitter bottle with pink center was designed to evoke nightlife and sequins. Created by a team of perfumers including Olivier Cresp, Honorine Blanc, and Nathalie Lorson. A top Ulta seller for years.</div>
         <div class="astro">Scorpio • Capricorn</div>
       </div>
     </div>
@@ -418,7 +431,7 @@ footer {
         <div class="personality">Sweet, Dreamy, Youthful</div>
         <div class="notes"><strong>Gourmand Floral</strong><br>Lavender, Pear • Coconut, Praline • Musk, Woods</div>
         <div class="people">Face / Founder: Ariana Grande</div>
-        <div class="history">Launched 2018. Ariana Grande’s cloud bottle became a Gen-Z phenomenon. Soft, sweet, and airy. Extremely popular at Ulta.</div>
+        <div class="history"><strong>Origins & Development:</strong> Launched in 2018 as Ariana Grande’s first major fragrance. Developed as an uplifting, artistic expression of positivity. The cloud-shaped bottle was designed to evoke both natural clouds and digital optimism. Created in partnership with a major fragrance house and quickly became a Gen-Z phenomenon at Ulta and beyond. Soft, sweet, and airy with strong skin chemistry performance.</div>
         <div class="astro">Pisces • Cancer</div>
       </div>
     </div>
@@ -429,7 +442,7 @@ footer {
         <div class="personality">Fresh, Playful, Optimistic</div>
         <div class="notes"><strong>Floral Fruity</strong><br>Wild Strawberry, Violet • Jasmine, Gardenia • Musk, Vanilla</div>
         <div class="people">Designer: Marc Jacobs • Perfumer: Alberto Morillas</div>
-        <div class="history">Launched 2007. The white daisy-shaped bottle became a cultural icon of youthful femininity. Long-running Ulta bestseller with many flankers.</div>
+        <div class="history"><strong>Origins & Development:</strong> Launched in 2007 by Marc Jacobs Fragrances. Created by master perfumer Alberto Morillas as a radiant floral celebrating youthful optimism. The white daisy-cap bottle became an instant cultural icon of playful femininity and won Fragrance Foundation awards for packaging. Developed as a bright, approachable scent that has spawned numerous flankers and remains a long-running Ulta bestseller.</div>
         <div class="astro">Gemini • Libra</div>
       </div>
     </div>
@@ -447,7 +460,7 @@ footer {
         <div class="personality">Effortless, Subtly Edgy, Second Skin</div>
         <div class="notes"><strong>Woody Floral</strong><br>Sparkling Bergamot • Clary Sage • White Florals (Orange Flower, Hedione) • Moss • Creamy Tonka • Sandalwood • Iso E Super</div>
         <div class="people">Founder / Face: Tate McRae • Perfumers: Adriana Medina & Antoine Maisondieu (Givaudan / Scent Beauty) • Campaign photographer: Mario Sorrenti</div>
-        <div class="history">Launched October 2026 with Scent Beauty. Designed as a “second skin” that interacts with the wearer’s chemistry via Iso E Super. Available on tatebytm.com ($30–$82) and Ulta (online Oct 16, stores Oct 25). Campaign shot by Mario Sorrenti in a 90s supermodel aesthetic.<br><br><strong>Victoria’s Secret connection:</strong> On October 18, 2026, Tate performed at the Victoria’s Secret Fashion Show in Los Angeles in a custom red lingerie look (corset, panties, garters), debuting “Housewife” live and also performing “Sports Car” and “Dear God.” She walked the runway, shared a moment with Gigi Hadid, and wore wings for the closer. She has also worn VS pieces in personal style moments, including a viral $50 lace balconette bra.</div>
+        <div class="history"><strong>Origins & Development:</strong> Launched October 2026 in partnership with Scent Beauty. Developed by Givaudan master perfumers Adriana Medina and Antoine Maisondieu as a “second skin” fragrance that interacts with the wearer’s chemistry via Iso E Super. The sculptural glass bottle balances soft fluidity with architectural strength. Campaign shot by Mario Sorrenti in a 90s supermodel aesthetic. Available on tatebytm.com ($30–$82) and Ulta (online Oct 16, stores Oct 25).<br><br><strong>Victoria’s Secret connection:</strong> On October 18, 2026, Tate performed at the Victoria’s Secret Fashion Show in Los Angeles in a custom red lingerie look (corset, panties, garters), debuting “Housewife” live and also performing “Sports Car” and “Dear God.” She walked the runway, shared a moment with Gigi Hadid, and wore wings for the closer. She has also worn VS pieces in personal style moments, including a viral $50 lace balconette bra.</div>
         <div class="astro">Gemini • Libra</div>
       </div>
     </div>
@@ -456,7 +469,7 @@ footer {
 
 <footer>
   CELESTIAL FRAGRANCES • DIOR • ULTA FAVORITES • TATE MCRAE<br>
-  More houses and products coming soon.
+  Stories, origins, and the people behind the scents. More coming soon.
 </footer>
 
 <script>
@@ -486,8 +499,8 @@ zodiacs.forEach(z => {
     document.querySelectorAll('.zodiac-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     rec.innerHTML = `
-      <h3 style="font-family:'Playfair Display',serif; color:var(--gold); font-size:1.8rem; margin-bottom:0.8rem;">${z.sign}</h3>
-      <p style="font-size:1.1rem; margin-bottom:0.4rem;">Your Celestial Match: <strong style="color:var(--gold)">${z.fragrance}</strong></p>
+      <h3 style="font-family:'Playfair Display',serif; color:#ff6b00; font-size:1.8rem; margin-bottom:0.8rem;">${z.sign}</h3>
+      <p style="font-size:1.1rem; margin-bottom:0.4rem;">Your Celestial Match: <strong style="color:#ff6b00">${z.fragrance}</strong></p>
       <p style="opacity:0.85;">${z.reason}</p>
     `;
     rec.classList.add('show');
